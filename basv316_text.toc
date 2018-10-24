@@ -1,0 +1,38 @@
+\contentsline {chapter}{Preface}{5}{chapter*.2}
+\contentsline {chapter}{\numberline {1}Introduction}{7}{chapter.1}
+\contentsline {section}{\numberline {1.1}Objectives}{7}{section.1.1}
+\contentsline {section}{\numberline {1.2}Knowing}{7}{section.1.2}
+\contentsline {subsection}{\numberline {1.2.1}Different Sources of Knowledge}{7}{subsection.1.2.1}
+\contentsline {subsection}{\numberline {1.2.2}What is science?}{8}{subsection.1.2.2}
+\contentsline {subsection}{\numberline {1.2.3}Scientific Research}{10}{subsection.1.2.3}
+\contentsline {subsection}{\numberline {1.2.4}Scientific Method}{11}{subsection.1.2.4}
+\contentsline {subsection}{\numberline {1.2.5}Types of Science Research}{11}{subsection.1.2.5}
+\contentsline {subsubsection}{\numberline {1.2.5.1}Exploratory}{12}{subsubsection.1.2.5.1}
+\contentsline {subsubsection}{\numberline {1.2.5.2}Descriptive}{12}{subsubsection.1.2.5.2}
+\contentsline {subsubsection}{\numberline {1.2.5.3}Explanatory}{12}{subsubsection.1.2.5.3}
+\contentsline {subsection}{\numberline {1.2.6}Specific Considerations for Business/Marketing Research}{12}{subsection.1.2.6}
+\contentsline {section}{\numberline {1.3}Summary}{13}{section.1.3}
+\contentsline {chapter}{\numberline {2}Foundations}{15}{chapter.2}
+\contentsline {section}{\numberline {2.1}Introduction}{15}{section.2.1}
+\contentsline {subsection}{\numberline {2.1.1}Ontology and Epistemology}{15}{subsection.2.1.1}
+\contentsline {section}{\numberline {2.2}Paradigms and Theories}{16}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Paradigm}{17}{subsection.2.2.1}
+\contentsline {subsection}{\numberline {2.2.2}Theory}{18}{subsection.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.1}Definition}{18}{subsubsection.2.2.2.1}
+\contentsline {subsubsection}{\numberline {2.2.2.2}Building Blocks of a Theory}{18}{subsubsection.2.2.2.2}
+\contentsline {subsubsection}{\numberline {2.2.2.3}Variables}{20}{subsubsection.2.2.2.3}
+\contentsline {subsubsection}{\numberline {2.2.2.4}Attributes of a Good Theory}{20}{subsubsection.2.2.2.4}
+\contentsline {subsubsection}{\numberline {2.2.2.5}Approaches to Theorizing}{21}{subsubsection.2.2.2.5}
+\contentsline {section}{\numberline {2.3}Propositions, Hypothesis, and Models}{22}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}Theories and Models}{22}{subsection.2.3.1}
+\contentsline {section}{\numberline {2.4}Inductive or Deductive Approaches}{23}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}Inductive Approaches}{23}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}Deductive Approaches}{24}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Complementary Approaches}{24}{subsection.2.4.3}
+\contentsline {section}{\numberline {2.5}Qualitative vs.\nobreakspace {}Quantitative Data}{25}{section.2.5}
+\contentsline {section}{\numberline {2.6}Summary}{25}{section.2.6}
+\contentsline {chapter}{\numberline {3}Methods}{27}{chapter.3}
+\contentsline {chapter}{\numberline {4}Applications}{29}{chapter.4}
+\contentsline {section}{\numberline {4.1}Example one}{29}{section.4.1}
+\contentsline {section}{\numberline {4.2}Example two}{29}{section.4.2}
+\contentsline {chapter}{\numberline {5}Final Words}{31}{chapter.5}

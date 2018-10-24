@@ -1,0 +1,1616 @@
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+\else % if luatex or xelatex
+  \ifxetex
+    \usepackage{mathspec}
+  \else
+    \usepackage{fontspec}
+  \fi
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\usepackage[margin=1in]{geometry}
+\usepackage{hyperref}
+\hypersetup{unicode=true,
+            pdftitle={Introductory Methods of Analysis},
+            pdfauthor={George Self},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{natbib}
+\bibliographystyle{apalike}
+\usepackage{longtable,booktabs}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+%%% Use protect on footnotes to avoid problems with footnotes in titles
+\let\rmarkdownfootnote\footnote%
+\def\footnote{\protect\rmarkdownfootnote}
+
+%%% Change title format to be more compact
+\usepackage{titling}
+
+% Create subtitle command for use in maketitle
+\newcommand{\subtitle}[1]{
+  \posttitle{
+    \begin{center}\large#1\end{center}
+    }
+}
+
+\setlength{\droptitle}{-2em}
+
+  \title{Introductory Methods of Analysis}
+    \pretitle{\vspace{\droptitle}\centering\huge}
+  \posttitle{\par}
+    \author{George Self}
+    \preauthor{\centering\large\emph}
+  \postauthor{\par}
+      \predate{\centering\large\emph}
+  \postdate{\par}
+    \date{2018-10-23}
+
+\usepackage{booktabs}
+\usepackage{amsthm}
+\makeatletter
+\def\thm@space@setup{%
+  \thm@preskip=8pt plus 2pt minus 4pt
+  \thm@postskip=\thm@preskip
+}
+\makeatother
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Theorem}[chapter]
+\newtheorem{lemma}{Lemma}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definition}[chapter]
+\newtheorem{corollary}{Corollary}[chapter]
+\newtheorem{proposition}{Proposition}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Example}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Exercise}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Remark}
+\newtheorem*{solution}{Solution}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{preface}{%
+\chapter*{Preface}\label{preface}}
+\addcontentsline{toc}{chapter}{Preface}
+
+I have taught BASV 316, \emph{Introductory Methods of Analysis}, online
+for the University of Arizona in Sierra Vista since 2010 and enjoy
+working with students on research methods. From the start, I wanted
+students to work with statistics as part of our studies and carry out
+the types of calculations that are discussed in the text. As I evaluated
+statistical software I had three criteria:
+
+\begin{itemize}
+\item
+  \textbf{Open Educational Resource (OER)}. It is important to me that
+  students use software that is available free of charge and is
+  supported by the entire web community.
+\item
+  \textbf{Platform}. While most of my students use a Windows-based
+  system, some use Macintosh and it was important to me to use software
+  that is available for all of those platforms. As a bonus, most OER
+  software is also available for the Linux system, though I am not aware
+  of any of my students who are using Linux. Finally, I occasionally
+  have students who are not able to load software on their personal
+  computers (think: \emph{Chromebook}) so I needed an online capability.
+\item
+  \textbf{Longevity}. I wanted a system that could be used in other
+  college classes or in a business setting after graduation. That way,
+  any time a student spends learning the software in my class will be an
+  investment that can yield results for many years.
+\end{itemize}
+
+\emph{R} (just a single letter, \emph{R}) met those objectives and that
+is the software I chose to use. This manual started as a series of six
+lab exercises using \emph{R} but has grown over the years to the ten
+topics covered in this edition. Moreover, \emph{R} is a recognized
+standard for statistical analysis and could be easily used for even
+peer-reviewed published papers. It is my hope that students will find
+the labs instructive and they will then be able to use \emph{R} for
+other classes.
+
+This lab manual is written with \emph{Bookdown} tools in \emph{RStudio}.
+It is published under a \emph{Creative Commons 0 Universal} license,
+essentially ``public domain,'' (see {[}Creative Commons License{]}) with
+a goal that other instructors can modify and use it to meet their own
+needs. The source can be found at \href{https://goo.gl/6dZqCK}{GITHUB}
+and I always welcome comments. Finally, it was written with base R (R
+Core Team (2017). R: A language and environment for statistical
+computing. \href{https://www.R-project.org/}{R Foundation for
+Statistical Computing, Vienna, Austria.}).
+
+--George Self
+
+\hypertarget{introduction}{%
+\chapter{Introduction}\label{introduction}}
+
+\hypertarget{objectives}{%
+\section{Objectives}\label{objectives}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Identify the various sources of knowledge
+\item
+  Define ``science''
+\item
+  Describe the scientific method and relate that to business research
+\item
+  Identify the three types of science research (exploratory,
+  descriptive, and explanatory)
+\end{enumerate}
+
+\hypertarget{knowing}{%
+\section{Knowing}\label{knowing}}
+
+In general, people want to know about things. Most people are curious
+about the world around them but business owners are interested in
+specifically how people can be persuaded to make a purchase.
+Understanding how one person can walk past a candy store without even
+the slightest thought about going inside while another cannot seem to
+walk in the same block without stopping in for a treat is valuable
+information for the owner of the candy store. In general, business
+owners are eager to know about people and what drives their behavior.
+
+The goal of this book is to teach students how research can be used to
+help business owners make good decisions. More specifically, the book
+examines the ways that researchers come to understand the impetus that
+drives purchases. The research methods considered in this book are a
+systematic process of inquiry designed to learn something of value about
+a business problem. Before considering research methods, though, it is
+useful to contemplate other sources of knowledge.
+
+\hypertarget{different-sources-of-knowledge}{%
+\subsection{Different Sources of
+Knowledge}\label{different-sources-of-knowledge}}
+
+As an introduction to the field of research, it is useful to briefly
+consider common sources of knowledge.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Assumptions. Many people assume that children without siblings are
+  rather spoiled and unpleasant. In fact, many people believe that the
+  social skills of only children will not be as well developed as those
+  of people who were reared with siblings. However, sociological
+  research shows that children who grow up without siblings are no worse
+  off than those with siblings when it comes to developing good social
+  skills \footnote{Bobbitt-Zeher, Donna, and Douglas B. Downey. ``Number
+    of siblings and friendship nominations among adolescents.'' Journal
+    of Family Issues 34.9 (2013): 1175-1193.}. Researchers consider
+  precisely these types of assumptions that ``everyone knows'' when
+  investigating their worlds. Sometimes the assumptions are correct and
+  other times not so much.
+\item
+  Direct Experience. One source of knowledge is direct experience. Mark
+  Twain observed that ``\ldots{} the cat that sits down on a hot
+  stove-lid \ldots{} will never sit down on a hot stove-lid
+  again\ldots{}'' \footnote{Twain, Mark. Following the equator.
+    Trajectory Inc, 2014. Found at
+    (\url{https://fada.birzeit.edu/jspui/bitstream/20.500.11889/4989/1/following_the_equator__a_journey_around_the_world.pdf})}
+  Direct experience may be a source of accurate information, but only
+  for those who experience it. The problem is that the observation is
+  not deliberate or formal; rather, it comes as an accidental by-product
+  of life. Even worse, the lesson learned may be wrong. Without a
+  systematic process for observing and evaluating those observations any
+  conclusions drawn are suspect.
+\item
+  Tradition. Another source of knowledge is tradition. There is an urban
+  legend about a woman who for years used to cut both ends off of a ham
+  before putting it in the oven \footnote{See Snopes:
+    (\url{http://www.snopes.com/weddings/newlywed/secret.asp})}. She
+  baked ham that way because that was the way her mother did it, so
+  clearly that was the way it was supposed to be done. Her mother was
+  the authority, after all. After years of tossing cuts of perfectly
+  good ham into the trash, however, she learned that the only reason her
+  mother ever cut the ends off ham before cooking it was that her baking
+  pan was not large enough to accommodate the ham without trimming it.
+  Tradition may or may not be a good source of knowledge.
+\item
+  Authority. Many people rely on the government, teachers, and other
+  authority figures to dispense knowledge. Unfortunately, authority
+  figures may or may not be a source of accurate knowledge.
+\item
+  \textbf{Observation}. People rely on their own informal observations
+  of their worlds. Occasionally, someone will decide to ``investigate''"
+  something, perhaps an odd sound, and their observations will become
+  more selective. Unfortunately, these types of observations are not
+  systematic and may easily lead to incorrect conclusions.
+\item
+  Generalization. Often a broad pattern is observed and people draw a
+  conclusion that the pattern is true for all instances. This can be the
+  source of prejudice where the actions of a few bad actors may bias
+  peoples' knowledge of the whole.
+\end{enumerate}
+
+While there are many ways that people come to know what they know, some
+of those ways are more reliable than others. The goal of formal research
+is to ferret out an accurate answer to the questions people have --- to
+provide a reliable source of knowledge.
+
+\hypertarget{what-is-science}{%
+\subsection{What is science?}\label{what-is-science}}
+
+Most research methods used for business and marketing are based on
+methods used in the various social sciences and this section of the book
+describes how that scientific research is conducted.
+
+Many students assume that ``science'' is a craft practiced by highly
+educated experts wearing white lab coats and pouring boiling liquids
+into test tubes. Unfortunately, that is not an accurate definition of
+``science.'' Etymologically, the word ``science'' is derived from the
+Latin word \emph{scientia}, which means knowledge. ``Science,'' then, is
+a systematic and organized body of knowledge acquired by using a
+specific, rigorous method in any field of inquiry. The sciences can be
+grouped into two broad categories: natural and social. Natural science
+is the science of naturally occurring objects or phenomena, such as
+light, objects, matter, earth, celestial bodies, or the human body.
+Natural sciences are further classified into the physical sciences,
+earth sciences, life sciences, and others. In contrast, social science
+is the science of people or collections of people, such as groups,
+firms, societies, or economies, and their individual or collective
+behaviors. Social sciences can be classified into disciplines such as
+psychology (the science of human behaviors), sociology (the science of
+social groups), and economics (the science of markets and economies).
+
+Sciences are also classified by their purpose. Basic sciences, also
+called pure sciences, are those that explain the most basic objects and
+forces, relationships between them, and laws governing them. Examples
+include physics, mathematics, and biology. Applied sciences, also called
+practical sciences, are sciences that apply scientific knowledge from
+basic sciences to a physical environment. For instance, engineering is
+an applied science that applies the laws of physics and chemistry to
+practical applications such as building stronger bridges or fuel
+efficient combustion engines, while medicine is an applied science that
+applies the laws of biology to relieving human ailments.
+
+Scientific knowledge is a generalized body of laws and theories acquired
+using the scientific method to explain a phenomenon or behavior of
+interest. Closely related to laws and theories are hypotheses.
+
+\begin{itemize}
+\item
+  Laws are observed patterns of phenomena or behaviors and are based on
+  repeated experimental observations. They are generalized rules that
+  explain observations and are, typically, theories that have been
+  repeatedly tested and believed to be true. As an example, the
+  Newtonian Laws of Motion describe what happens when an object is in a
+  state of rest or motion (Newton's First Law), what force is needed to
+  move a stationary object or stop a moving object (Newton's Second
+  Law), and what happens when two objects collide (Newton's Third Law).
+  Collectively, the three laws constitute the basis of classical
+  mechanics --- a theory of moving objects.
+\item
+  Theories are systematic explanations of underlying phenomenon or
+  behavior. Theories are typically based on hypotheses that have been
+  tested and found to be true, but the testing has been incomplete or
+  not rigorous enough to classify the theory as a law. It is important
+  to note that theories are not ``wild guesses'' but are, instead, the
+  result of experimental observations that found to be true in the
+  instances tested. It is also important to note that theories can be
+  falsified, that is, there are ways to prove that the theory is not
+  true. As examples, the theory of optics explains the properties of
+  light and how it behaves in different media, electromagnetic theory
+  explains the properties of electricity and how to generate it, quantum
+  mechanics explains the properties of subatomic particles, and
+  thermodynamics explains the properties of energy and mechanical work.
+\item
+  Hypotheses are a well-guessed explanation of some phenomena or a
+  prediction about what will happen in the future. Hypotheses are
+  generally the beginning of an investigation that will either support
+  or reject the hypotheses. As an example, a researcher may hypothesize
+  that products in red boxes sell better than products in blue boxes. To
+  test the hypothesis, an experiment can be set up where the same
+  product is sold in two identical boxes, except that one box is red and
+  the other blue.
+\end{itemize}
+
+The pure science of economics and its applied science of business
+includes a body of both laws and theories. For example:
+
+\begin{itemize}
+\item
+  Law of Supply and Demand. While this is often described as a
+  \emph{model} it is also usually categorized as a law since it has been
+  shown to be true in repeated observations. This law basically states
+  that there is a relationship between a product's demand and its
+  supply.
+\item
+  Law of Diminishing Returns. This law states that at some point
+  increasing a single production factor will yield less profit-per-unit
+  produced. In other words, the return on the investment is not worth
+  the cost.
+\item
+  The 2009 Nobel Prize for economics was for the theory that groups work
+  together to manage common resources, like water, by using collective
+  property rights.
+\item
+  The theory of marginalism attempts to explain the discrepancy in the
+  value of goods by looking at their secondary, or marginal, utility.
+  The price of diamonds is greater than water because of a marginal
+  ``satisfaction'' of owning diamonds when compared to water, even
+  though water is far more utilitarian.
+\end{itemize}
+
+The goal of scientific research is to discover laws and postulate
+theories that can explain natural or social phenomena, or in other
+words, build scientific knowledge. It is important to understand that
+this knowledge may be imperfect or even quite far from the truth. It is
+important to understand that theories, upon which scientific knowledge
+is based, are explanations of a particular phenomenon and some tend to
+fit the observations better than others. The progress of science is
+marked by progression over time from poorer theories to better theories
+through enhanced observations using more accurate instruments and more
+informed logical reasoning.
+
+Scientific laws or theories are derived through a process of logic and
+evidence. Logic (theory) and evidence (observations) are the two, and
+only two, pillars upon which scientific knowledge is based. In science,
+theories and observations are interrelated and one cannot exist without
+the other. Theories provide meaning and significance to what we observe
+and observations help validate or refine existing theory or construct
+new theory. Any other means of knowledge acquisition, such as faith or
+authority, cannot be considered science.
+
+\hypertarget{scientific-research}{%
+\subsection{Scientific Research}\label{scientific-research}}
+
+Scientific research moves easily between theory and observations, each
+reinforcing the other. Theory drives the research of some phenomenon but
+observations made by the research further refine the underlying theory.
+Relying solely on observations for making inferences while ignoring
+theory is not scientific research, it is simple observation. The
+application of theories and observations lead to two primary types of
+scientific research: theoretical and empirical. Theoretical research is
+concerned with developing abstract concepts about natural or social
+phenomena while empirical research is concerned with testing theoretical
+concepts to see how well they reflect reality in our observations.
+
+Depending on a researcher's training and interest, scientific inquiry
+may take one of two forms: \emph{inductive research} or \emph{deductive
+research}. The goal of inductive research is to infer theoretical
+concepts and patterns from observed data. In contrast, the goal of
+deductive research, is to test theory using empirical data. Hence,
+inductive research is sometimes called theory-building research while
+deductive research is called theory-testing research. Note here that the
+goal of theory-testing is not just to test a theory, but to refine,
+improve, and extend it.
+
+The above figure illustrates the complementary nature of inductive and
+deductive research; they are two halves of a research cycle that
+constantly iterates. It is important to understand that theory-building
+(inductive research) and theory testing (deductive research) are both
+critical for the advancement of science and they are covered more
+thoroughly in Chapter 2. Elegant theories are not valuable if they do
+not match reality. Likewise, mountains of data are also useless until
+they can contribute to the construction of meaningful theories. Rather
+than viewing these two processes in a circular relationship, as shown in
+the above figure, perhaps they can be better viewed as a helix, with
+each iteration between theory and data contributing to improved
+observations of the phenomena and the resulting improved theory. Though
+both inductive and deductive research are important for the advancement
+of science, it appears that inductive (theory-building) research is more
+valuable when there are few prior theories or explanations, while
+deductive (theory-testing) research is more productive when there are
+many competing theories of the same phenomenon and researchers are
+interested in knowing which theory works best and under what
+circumstances.
+
+Theory building and theory testing are particularly difficult in
+business and marketing, given the imprecise nature of the theoretical
+concepts and the presence of many unaccounted factors that can influence
+the phenomenon of interest. It is also very difficult to refute theories
+that do not work. For instance, Karl Marx's theory of communism as an
+effective economic engine withstood for decades before it was finally
+discredited as being inferior to capitalism in promoting growth.
+Erstwhile communist economies like the Soviet Union and China eventually
+moved toward more capitalistic economies characterized by
+profit-maximizing private enterprises. However, the recent collapse of
+the mortgage and financial industries in the United States demonstrates
+that capitalism also has its flaws and is not as effective in fostering
+economic growth and social welfare as previously presumed. Unlike
+theories in the natural sciences, marketing theories are rarely perfect,
+which provides numerous opportunities for researchers to improve those
+theories or build their own alternative theories.
+
+Conducting scientific research, therefore, requires two sets of skills,
+theoretical and methodological, needed to operate in the theoretical and
+empirical levels respectively. Methodological skills (``know-how'') are
+relatively standard, invariant across disciplines, and easily acquired
+through various educational programs. However, theoretical skills
+(``know-what'') is considerably harder to master, requiring years of
+observation and reflection, and are tacit skills that cannot be taught
+but rather learned though experience. All of the greatest scientists in
+the history of humanity, such as Galileo, Newton, and Einstein were
+master theoreticians, and they are honored for the theories they
+postulated that transformed the course of science.
+
+\hypertarget{scientific-method}{%
+\subsection{Scientific Method}\label{scientific-method}}
+
+If science is knowledge acquired through a scientific method then what
+is the \emph{scientific method}? The scientific method refers to a
+standardized set of techniques for building scientific knowledge, such
+as how to make valid observations, how to interpret results, and how to
+generalize those results. The scientific method allows researchers to
+independently and impartially test preexisting theories and prior
+findings, and subject them to open debate, modifications, or
+enhancements. The scientific method must satisfy four characteristics:
+
+\begin{itemize}
+\item
+  Replicability. Others should be able to independently replicate or
+  repeat a scientific study and obtain similar, if not identical,
+  results.
+\item
+  Precision. Theoretical concepts, which are often hard to measure, must
+  be defined with such precision that others can use those definitions
+  to measure those concepts and test that theory.
+\item
+  Falsifiability. A theory must be stated in a way that it can be
+  disproven. Theories that cannot be tested or falsified are not
+  scientific theories and any such knowledge is not scientific
+  knowledge. A theory that is specified in imprecise terms or whose
+  concepts are not accurately measurable cannot be tested, and is
+  therefore not scientific. Sigmund Freud's ideas on psychoanalysis fall
+  into this category and is therefore not considered a ``theory'' even
+  though psychoanalysis may have practical utility in treating certain
+  types of ailments.
+\item
+  Parsimony. When there are multiple explanations of a phenomenon,
+  scientists must always accept the simplest or logically most
+  economical explanation. This concept is called parsimony or ``Occam's
+  razor.'' Parsimony prevents scientists from pursuing overly complex or
+  outlandish theories with endless number of concepts and relationships
+  that may explain a little bit of everything but nothing in particular.
+\end{itemize}
+
+Any branch of inquiry that does not allow the scientific method to test
+its basic laws or theories cannot be called ``science.'' For instance,
+art is not science because artistic ideas (such as the value of
+perspective) cannot be tested by independent observers using a
+replicable, precise, falsifiable, and parsimonious method. Similarly,
+music, literature, humanities, and law are also not considered science,
+even though they are creative and worthwhile endeavors.
+
+The scientific method, as applied to business and marketing, includes a
+variety of research approaches, tools, and techniques, such as
+qualitative and quantitative data, statistical analysis, experiments,
+field surveys, case research, and so forth. Most of this book is devoted
+to learning about these different methods. However, recognize that the
+scientific method operates primarily at the empirical level of research,
+i.e., how to make observations and analyze and interpret these
+observations. Very little of this method is directly pertinent to the
+theoretical level, which is really the more challenging part of
+scientific research.
+
+Finally, business researchers must bear in mind that the natural
+sciences are different from the social sciences in several important
+respects. The natural sciences are very precise, accurate,
+deterministic, and independent of the person making the observations.
+For instance, a scientific experiment in physics, such as measuring the
+speed of sound through a certain medium, should always yield the same
+results, irrespective of the time or place of the experiment. However,
+the same cannot be said for the social sciences, which tend to be less
+accurate and more ambiguous. For instance, an economist may want to
+measure the impact of some factor on a city's economy. Unfortunately,
+the outcome of that research may depend on the background and experience
+of the researcher, the indexes used to measure the impact, and the
+interpretation of those measures. In other words, there is a high degree
+variability in all social science research. While natural scientists
+agree totally on the speed of light or the gravitational attraction of
+the earth, there is no agreement among economists on questions like the
+impact of immigration and how much of a nation's economy should be
+earmarked for reducing carbon emissions. Researchers in business and
+marketing must be comfortable with handling high levels of ambiguity,
+uncertainty, and error that come with research in such sciences.
+
+\hypertarget{types-of-science-research}{%
+\subsection{Types of Science Research}\label{types-of-science-research}}
+
+Depending on the purpose of research, scientific research projects can
+be grouped into three types: exploratory, descriptive, and explanatory.
+
+\hypertarget{exploratory}{%
+\subsubsection{Exploratory}\label{exploratory}}
+
+Exploratory research is often conducted in new areas of inquiry, where
+the goals of the research are:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  to scope out the magnitude or extent of a particular phenomenon,
+  problem, or behavior
+\item
+  to generate some initial ideas (or ``hunches'') about that phenomenon
+\item
+  to test the feasibility of undertaking a more extensive study
+  regarding that phenomenon.
+\end{enumerate}
+
+For instance, if the citizens of a country are generally dissatisfied
+with governmental policies during an economic recession, exploratory
+research may be directed at measuring the extent of citizens'
+dissatisfaction. It would consider how the dissatisfaction is manifested
+and the presumed causes of such dissatisfaction. Such research may
+include examination of publicly reported figures, such as estimates of
+economic indicators like gross domestic product (GDP), unemployment, and
+consumer price index. This research may not lead to a very accurate
+understanding of the target problem, but may be worthwhile in
+determining the nature and extent of the problem and serve as a useful
+precursor to more in-depth research.
+
+\hypertarget{descriptive}{%
+\subsubsection{Descriptive}\label{descriptive}}
+
+Descriptive research is directed at making careful observations and
+detailed documentation of a phenomenon of interest. These observations
+must be based on the scientific method and therefore, are more reliable
+than casual observations by untrained people. Examples of descriptive
+research are tabulation of demographic statistics by the United States
+Census Bureau who use validated instruments for estimating factors like
+employment by sector. If any changes are made to the measuring
+instruments, estimates are provided with and without the changed
+instrumentation to allow the readers to make a fair before-and-after
+comparison regarding population or employment trends. Other descriptive
+research may include projects like chronicling reports of gang
+activities among adolescent youth, the persistence of religious,
+cultural, or ethnic practices in select communities, and the role of
+technologies in the spread of democracy movements.
+
+\hypertarget{explanatory}{%
+\subsubsection{Explanatory}\label{explanatory}}
+
+Explanatory research seeks explanations of observed phenomena, problems,
+or behaviors. While descriptive research examines what, where, and when
+of a phenomenon, explanatory research seeks answers to why and how. It
+attempts to ``connect the dots'' in research, by identifying causal
+factors and outcomes of the target phenomenon. An example is
+understanding the reasons behind gang violence with the goal of
+prescribing strategies to overcome such societal ailments. Most academic
+or doctoral research belongs to the explanation category, though some
+amount of exploratory and/or descriptive research may also be needed
+during initial phases of a research project. Seeking explanations for
+observed events requires strong theoretical and interpretation skills,
+along with intuition, insights, and personal experience.
+
+\hypertarget{specific-considerations-for-businessmarketing-research}{%
+\subsection{Specific Considerations for Business/Marketing
+Research}\label{specific-considerations-for-businessmarketing-research}}
+
+It is important to keep in mind that business researchers attempt to
+explain patterns in the habits of customers. A pattern does not explain
+every single person's experience, a fact that is both fascinating and
+frustrating. Individuals who create a pattern may not be the same over
+time and may not know one another, but they collectively create a
+pattern. Those new to business research may find these patterns
+frustrating because they expect various patterns to describe a group's
+characteristic but that often does not translate into an actual
+experience. A pattern can exist among a cohort without a specific
+individual being 100\% true to that pattern.
+
+As an example of patterns and their exceptions, consider the impact of
+social class on peoples' educational attainment. In fact, Ellwood \&
+Kane \footnote{Ellwood, David, and Thomas J. Kane. ``Who is getting a
+  college education? Family background and the growing gaps in
+  enrollment.'' Securing the future: Investing in children from birth to
+  college (2000): 283-324.} found that the percentage of children who
+did not receive any postsecondary schooling was four times greater among
+those in the lowest quartile income bracket than those in the upper
+quartile (that is, children from high-income families were far more
+likely than low-income children to go to college). These research
+findings detected patterns in society, but there are certainly many
+exceptions. Just because a child grows up in a household with little
+wealth does not keep that child from pursuing a college degree. People
+who object to research findings tend to cite evidence from their own
+personal experience, insisting that no patterns actually exists. The
+problem with this response, however, is that objecting to a social
+pattern on the grounds that it does not match a specific person's
+experience misses the point about patterns.
+
+Another matter that social scientists must consider is where they stand
+on the value of basic as opposed to applied research. In essence, this
+has to do with questions of for whom and for what purpose research is
+conducted. We can think of basic and applied research as resting on
+either end of a continuum. In marketing, basic research studies
+marketing for marketing's sake --- nothing more, nothing less. Sometimes
+researchers are motivated to conduct research simply because they happen
+to be interested in a topic and the goal may be to learn more about a
+topic. Applied research lies at the other end of the continuum. In
+marketing, applied research studies marketing for some purpose beyond a
+researcher's interest in a topic. Applied research is often client
+focused, meaning that the researcher is investigating a question posed
+by someone other than her or himself.
+
+One final consideration for business and marketing researchers is the
+difference between qualitative and quantitative methods. Qualitative
+methods generally involve words (like letters, memos, or policies) or
+pictures and common methods used include field research, interviews, and
+focus groups. Quantitative methods, on the other hand, generally involve
+numbers and common methods include surveys, content analysis, and
+experimentation. While qualitative methods aim to gain an in-depth
+understanding of a relatively small number of cases, quantitative
+methods offer less depth but more breadth because they typically focus
+on a much larger number of cases.
+
+Sometimes these two methods are presented or discussed in a way that
+suggests they are somehow in opposition to one another. The
+qualitative/quantitative debate is fueled by researchers who may prefer
+one approach over another, either because their own research questions
+are better suited to one particular approach or because they happened to
+have been trained in one specific method. While these two methodological
+approaches differ in goals, strengths, and weaknesses, they both attempt
+to answer a researcher's question and are equally viable. This text
+operates from the perspective that qualitative and quantitative methods
+are complementary rather than competing and both will be covered.
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  There are many different sources of knowledge and some are more
+  valuable than others for formulating theories and practices.
+\item
+  Science is the discipline of using formalized processes to create
+  theories to explain observed phenomena.
+\item
+  Scientific research is a process with a goal of using reproducible
+  methods to create a theory or validate the tenants of an existing
+  theory.
+\item
+  Scientific research can be divided into three types: exploratory,
+  descriptive, and expanatory.
+\item
+  Business research has specific considerations to meet the sometimes
+  disparate objectives of theory-building and practical application.
+\end{enumerate}
+
+\hypertarget{foundations}{%
+\chapter{Foundations}\label{foundations}}
+
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
+
+This chapter explores the connection between paradigms, theories, and
+research methods and how the researcher's analytic perspective might
+shape methodological choices.
+
+\hypertarget{ontology-and-epistemology}{%
+\subsection{Ontology and Epistemology}\label{ontology-and-epistemology}}
+
+The principles of business research, like those of sociology and
+psychology research, are founded on two major branches of philosophy:
+\emph{ontology} and \emph{epistemology}. Ontology concerns the nature of
+reality and the researcher's ontological position shapes the sorts of
+research questions posed and how those questions are researched.
+Ontology posits two fundamental positions:
+
+\textbf{Objectivism}: Things are real and exist regardless of any sort
+of social activity. This is often reflected in research about societal
+organization. Objectivists take the position that people may differ in
+their perception of reality but there is only one true reality and a
+researcher's job is to discover that reality.
+
+\textbf{Constructivism}: Things do not just exist apart from the society
+that observes them. This is often reflected in research about culture
+and its influence on human activities. Constructivists take the position
+that reality is shaped individually and that a researcher's job is to
+understand others' view of reality.
+
+Like ontology, epistemology has to do with knowledge. Rather than
+dealing with questions about \emph{what is}, epistemology deals with
+questions of \emph{how we know}.
+
+Four main branches of epistemology are frequently encountered in
+business research, and the researcher's beliefs concerning these
+branches will shape the research design.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Pragmatism} accepts both personal experience and measured data
+  as sources of knowledge. These researchers will usually design applied
+  research projects that use different perspectives to help answer a
+  question.
+\item
+  \textbf{Positivism} relies only on findings gained through
+  measurement. These researchers tend to focus on causality and try to
+  reduce phenomena to its simplest elements.
+\item
+  \textbf{Realism} relies on observations rather than precise measures
+  to provide credible facts and data. These researchers would use tools
+  like structured interviews to gain an understanding of a phenomenon.
+\item
+  \textbf{Interpretivism} uses subjective explanations of social
+  phenomena. These researchers use tools like ethnographic studies to
+  attempt to understand an entire social structure.
+\end{enumerate}
+
+Burrell and Morgan (1979), in their seminal book \emph{Sociological
+Paradigms and Organizational Analysis}, suggested that epistemology
+shapes a researcher's approach to a project, e.g.~should an objective or
+subjective approach be used, while ontology shapes the researcher's
+interpretation of the findings, e.g.~does the world consist mostly of
+social order or radical change. Using these two sets of assumptions,
+Burrell and Morgan categorized research as in the figure below.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  \textbf{Functionalism} is the mindset adopted by researchers
+  who\ldots{}
+
+  \begin{itemize}
+  \item
+    \textbf{Ontology}: view the world as orderly and consisting of
+    patterns of ordered events or behaviors.
+  \item
+    \textbf{Epistemology}: believe that the best way to study the world
+    is to use an objective approach that is independent of the person
+    conducting the observation by using standardized collection tools
+    like surveys.
+  \end{itemize}
+\item
+  \textbf{Interpretivism} is the mindset adopted by researchers
+  who\ldots{}
+
+  \begin{itemize}
+  \item
+    \textbf{Ontology}: view the world as orderly and consisting of
+    patterns of ordered events or behaviors.
+  \item
+    \textbf{Epistemology}: believe that the best way to study the world
+    is though the subjective interpretation of participants involved
+    using techniques like interviewing participants and then reconciling
+    differences using their own subjective perspectives.
+  \end{itemize}
+\item
+  \textbf{Radical Structure} is the mindset adopted by researchers
+  who\ldots{}
+
+  \begin{itemize}
+  \item
+    \textbf{Ontology}: view the world as constantly changing, often
+    radically, with few unvarying patterns or behaviors.
+  \item
+    \textbf{Epistemology}: believe that the best way to study the world
+    is to use an objective approach that is independent of the person
+    conducting the observation by using standardized collection tools
+    like surveys.
+  \end{itemize}
+\item
+  \textbf{Radical Humanism} is the mindset adopted by researchers
+  who\ldots{}
+
+  \begin{itemize}
+  \item
+    \textbf{Ontology}: view the world as constantly changing, often
+    radically, with few unvarying patterns or behaviors.
+  \item
+    \textbf{Epistemology}: believe that the best way to study the world
+    is though the subjective interpretation of participants involved
+    using techniques like interviewing participants and then reconciling
+    differences using their own subjective perspectives.
+  \end{itemize}
+\end{enumerate}
+
+To date, the majority of business research has emulated the natural
+sciences and adopted functionalist techniques. Thus, researchers tend to
+believe that social patterns can be understood in terms of their
+functional components so they study those components in detail using
+objective techniques like surveys and experimental research. However, a
+small but growing number of researchers are adopting interpretivist
+techniques and are attempting to understand social order using
+subjective tools such as interviews and ethnographic studies. Radical
+structuralism and radical humanism represents a negligible proportion of
+business research because researchers are primarily concerned with
+understanding generalizable patterns of behavior rather than
+idiosyncratic or changing events. However, social and organizational
+phenomena generally consists of elements of both order and change. For
+instance, organizational success depends on formalized business
+processes, work procedures, and job responsibilities, while being
+simultaneously constrained by a constantly changing mix of competitors,
+competing products, suppliers, and customer base in the business
+environment. Therefore, to obtain a holistic understanding of phenomena
+like the success of some businesses and failure of others may require a
+multi-modal approach.
+
+\hypertarget{paradigms-and-theories}{%
+\section{Paradigms and Theories}\label{paradigms-and-theories}}
+
+The terms \emph{paradigm} and \emph{theory} are often used
+interchangeably in business and marketing research although experts
+disagree about whether these are identical or distinct concepts. This
+text makes a slight distinction between the two ideas because thinking
+about each concept as analytically distinct provides a useful framework
+for understanding the connections between research methods and
+scientific ways of thinking.
+
+\hypertarget{paradigm}{%
+\subsection{Paradigm}\label{paradigm}}
+
+The researcher's own frames of reference, or believe systems, form a
+paradigm. Thus, if a researcher is, generally, functionalist in outlook
+then that would be the paradigm used to design and conduct research
+projects. Paradigms are usually quite complex and include facets of
+upbringing, family influence, societal norms, and many other factors.
+Paradigms are often hard to recognize, because they are implicit,
+assumed, and taken for granted. However, recognizing paradigms is key to
+making sense of and reconciling differences in peoples' perceptions of
+the same social phenomenon. For instance, why do liberals believe that
+the best way to improve secondary education is to hire more teachers,
+but conservatives believe that privatizing education (using such means
+as school vouchers) are more effective in achieving the same goal? The
+differences in two paradigms explains this conflict, liberals believe
+more in labor (i.e., in having more teachers and schools) while
+conservatives place more faith in competitive markets (i.e., in free
+competition between schools competing for education dollars).
+
+Paradigms are like ``colored glasses'' that govern how people structure
+their thoughts about the world. As one other example, imagine that a
+certain technology was successfully implemented in one organization but
+failed miserably in another. A researcher using a ``rational lens'' will
+look for rational explanations of the problem such as inadequate
+technology or poor fit between technology and the task context where it
+is being utilized. Another research looking at the same problem through
+a ``social lens'' may seek out social deficiencies such as inadequate
+user training or lack of management support. Yet another researcher
+seeing it through a ``political lens'' will look for instances of
+organizational politics that may subvert the technology implementation
+process. Hence, subconscious paradigms often constrain the concepts that
+researchers attempt to measure and their subsequent interpretations of
+those measures. However, it is likely that all of the above paradigms
+are at least partially correct and a fuller understanding of the problem
+may require an application of multiple paradigms.
+
+Two paradigms are commonly found in business research.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Positivism. This is the framework that usually comes to mind when
+  people think about scientific research \footnote{Positivism was also
+    discussed as one of the main branches of epistemology but since it
+    is so common in the research community it is also recognized as a
+    paradigm.}. Positivism is guided by the principles of objectivity,
+  knowability, and deductive logic The positivist framework operates
+  from the assumption that society can and should be studied empirically
+  and scientifically. Positivism also calls for value-free research
+  where researchers attempt to abandon their own biases and values in a
+  quest for objective, empirical, and knowable truth. Positivism is
+  based on the works of French philosopher Auguste Comte (1798 - 1857)
+  and was the dominant scientific paradigm until the mid-20th century.
+  Unfortunately, positivism eventually evolved to empiricism or a blind
+  faith in observed data and a rejection of any attempt to extend or
+  reason beyond observable facts. Since human thoughts and emotions
+  could not be directly measured, there were not considered to be
+  legitimate topics for scientific research.
+\item
+  Postmodernism. Frustrations with the strictly empirical nature of
+  positivist philosophy led to the development of postmodernism during
+  the mid-late 20th century. Postmodernism argues that one can make
+  reasonable inferences about a phenomenon by combining empirical
+  observations with logical reasoning. Postmodernists view science as
+  not certain but probabilistic (i.e., based on many contingencies), and
+  often seek to explore these contingencies to understand social reality
+  better. The postmodernist camp has further fragmented into
+  subjectivists, who view the world as a subjective construction of our
+  minds rather than as an objective reality, and critical realists, who
+  believe that there is an external reality that is independent of a
+  person's thinking but we can never know such reality with any degree
+  of certainty.
+\end{enumerate}
+
+\hypertarget{theory}{%
+\subsection{Theory}\label{theory}}
+
+\hypertarget{definition}{%
+\subsubsection{Definition}\label{definition}}
+
+\emph{Theories} are explanations of a natural or social behavior, event,
+or phenomenon. More formally, a scientific theory is a system of
+constructs (concepts) and propositions (relationships between those
+constructs) that collectively presents a logical, systematic, and
+coherent explanation of a phenomenon of interest within some assumptions
+and boundary conditions \footnote{Bacharach, Samuel B. ``Organizational
+  theories: Some criteria for evaluation.'' Academy of management review
+  14.4 (1989): 496-515.} It is important to note that people not
+familiar with scientific research often view a theory as some sort of
+speculation, a ``guess,'' and statements like ``it's only a theory'' are
+common. However, a scientific theory is well-researched and based on
+repeated observations of some phenomenon. As an example, plate tectonics
+is a theory which indicates that the continents are slowly moving across
+the earth's surface. This is a well-established theory based on research
+spanning decades of observations, not just some sort of idle
+speculation. A good scientific theory should be well supported using
+observed facts and also have practical value. Famous organizational
+research Kurt Lewin once said, ``Theory without practice is sterile;
+practice without theory is blind.'' Hence, both theory and practice are
+essential elements of research.
+
+Theories should explain \emph{why} things happen rather than just
+describe or predict. Note that it is possible to predict events or
+behaviors using a set of predictors without necessarily explaining why
+such events are taking place. For instance, market analysts predict
+fluctuations in the stock market based on market announcements, earnings
+reports of major companies, and new data from the Federal Reserve and
+other agencies, based on previously observed correlations. Prediction
+requires only correlations while explanations require causations.
+Establishing causation requires three conditions:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Correlations between two constructs
+\item
+  Temporal precedence (the cause must precede the effect in time)
+\item
+  Rejection of alternative hypotheses (through testing)
+\end{enumerate}
+
+It is also important to understand what theory is not. Theory is not
+data, facts, typologies, taxonomies, or empirical findings. A collection
+of facts is not a theory, just as a pile of stones is not a house.
+Likewise, a collection of constructs (e.g., a typology of constructs) is
+not a theory, because theories must go well beyond constructs to include
+propositions, explanations, and boundary conditions. Data, facts, and
+findings operate at the empirical or observational level, while theories
+operate at a conceptual level and are based on logic rather than
+observations.
+
+There are many benefits to using theories in research. First, theories
+provide the underlying logic explaining the occurrence of phenomena by
+describing the key drivers, outcomes, and underlying processes that are
+responsible for that phenomenon. Second, theories aid in sense-making by
+synthesizing prior findings within a framework. Third, theories provide
+guidance for future research by helping identify constructs and
+relationships that are worthy of further research. Fourth, theories
+contribute to the cumulative body of knowledge and bridge gaps between
+other theories by reevaluating those theories in a new light.
+
+However, theories can also have their own share of limitations. As
+simplified explanations of reality, theories may not always provide
+adequate explanations of the phenomena of interest. Theories are
+designed to be simple and parsimonious explanations, while reality is
+usually significantly more complex. Furthermore, theories may impose
+blinders or limit researchers' ``range of vision,'' causing them to miss
+out on important concepts that are not defined by the theory.
+
+\hypertarget{building-blocks-of-a-theory}{%
+\subsubsection{Building Blocks of a
+Theory}\label{building-blocks-of-a-theory}}
+
+David Whetten \footnote{Whetten, David A. ``What constitutes a
+  theoretical contribution?.''" Academy of management review 14.4
+  (1989): 490-495.} suggests that there are four building blocks of a
+theory:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Constructs capture the ``what''" of theories (i.e., what concepts are
+  important for explaining a phenomenon). They are abstract concepts
+  specified at a high level of abstraction that are chosen specifically
+  to explain the phenomenon of interest. Constructs may be
+  unidimensional (i.e., embody a single concept), such as weight or age,
+  or multi-dimensional (i.e., embody multiple underlying concepts), such
+  as personality or culture. While some constructs, such as age,
+  education, and firm size, are easy to understand, others, such as
+  creativity, prejudice, and organizational agility, may be more complex
+  and abstruse, and still others such as trust, attitude, and learning,
+  may represent temporal tendencies rather than steady states.
+  Nevertheless, all constructs must have clear and unambiguous
+  operational definition that should specify exactly how the construct
+  will be measured and at what level of analysis (individual, group,
+  organizational, etc.). Measurable representations of abstract
+  constructs are called variables. For instance, intelligence quotient
+  (IQ score) is a variable that is purported to measure an abstract
+  construct called intelligence. As noted earlier, scientific research
+  proceeds along two planes: a theoretical plane and an empirical plane.
+  Constructs are conceptualized at the theoretical plane, while
+  variables are operationalized and measured at the empirical
+  (observational) plane. Furthermore, variables may be independent,
+  dependent, mediating, or moderating. The distinction between
+  constructs (conceptualized at the theoretical level) and variables
+  (measured at the empirical level) is shown in the following figure.
+\item
+  Propositions capture the ``how'' (i.e., how are these concepts related
+  to each other). They are associations postulated between constructs
+  based on deductive logic. Propositions are stated in declarative form
+  and should ideally indicate a cause-effect relationship (e.g., if X
+  occurs, then Y will follow). Note that propositions may be conjectural
+  but \emph{must} be testable, and should be rejected if they are not
+  supported by empirical observations. However, like constructs,
+  propositions are stated at the theoretical level, and they can only be
+  tested by examining the corresponding relationship between measurable
+  variables of those constructs. The empirical formulation of
+  propositions, stated as relationships between variables, is called
+  hypotheses. The distinction between propositions (formulated at the
+  theoretical level) and hypotheses (tested at the empirical level) is
+  depicted in the following figure.
+\item
+  Logic represents the ``why'' (i.e., why are these concepts related).
+  Logic provides the basis for justifying the propositions as
+  postulated. Logic acts like a ``glue'' that connects the theoretical
+  constructs and provides meaning and relevance to the relationships
+  between these constructs. Logic also represents the ``explanation''
+  that lies at the core of a theory. Without logic, propositions will be
+  ad hoc, arbitrary, and meaningless, and cannot be tied into a cohesive
+  ``system of propositions'' that is the heart of any theory.
+\item
+  Boundary Conditions/Assumptions examines the ``who, when, and where''
+  (i.e., under what circumstances will these concepts and relationships
+  work). All theories are constrained by assumptions about values, time,
+  and space, and boundary conditions that govern where the theory can be
+  applied and where it cannot be applied. For example, many economic
+  theories assume that human beings are rational (or boundedly rational)
+  and employ utility maximization based on cost and benefit expectations
+  as a way of understand human behavior. In contrast, political science
+  theories assume that people are more political than rational, and try
+  to position themselves in their professional or personal environment
+  in a way that maximizes their power and control over others. Given the
+  nature of their underlying assumptions, economic and political
+  theories are not directly comparable, and researchers should not use
+  economic theories if their objective is to understand the power
+  structure or its evolution in a organization. Likewise, theories may
+  have implicit cultural assumptions (e.g., whether they apply to
+  individualistic or collective cultures), temporal assumptions (e.g.,
+  whether they apply to early stages or later stages of human behavior),
+  and spatial assumptions (e.g., whether they apply to certain
+  localities but not to others). If a theory is to be properly used or
+  tested, all of its implicit assumptions that form the boundaries of
+  that theory must be properly understood. Unfortunately, theorists
+  rarely state their implicit assumptions clearly, which leads to
+  frequent misapplications of theories to problem situations in
+  research.
+\end{enumerate}
+
+\hypertarget{variables}{%
+\subsubsection{Variables}\label{variables}}
+
+A term frequently associated with, and sometimes used interchangeably
+with, a construct is a variable. Etymologically speaking, a variable is
+a quantity that can vary (e.g., from low to high, negative to positive,
+etc.), in contrast to constants that do not vary (i.e., remain
+constant). However, in scientific research, a variable is a measurable
+representation of an abstract construct. As abstract entities,
+constructs are not directly measurable, and hence, we look for proxy
+measures called variables. For instance, a person's intelligence is
+often measured as his or her IQ (intelligence quotient) score, which is
+an index generated from an analytical and pattern-matching test
+administered to people. In this case, intelligence is a construct (a
+concept), and the IQ score is a variable that measures that construct.
+Whether IQ scores truly measures one's intelligence is anyone's guess
+(though many believe that they do), and depending on whether how well it
+measures intelligence, the IQ score may be a good or a poor measure of
+the intelligence construct.
+
+Depending on their intended use, variables may be classified as
+
+\begin{itemize}
+\tightlist
+\item
+  Independent. Explain other variables.
+\item
+  Dependent. Are explained by other variables.
+\item
+  Moderating. Influence the relationship between independent and
+  dependent variables.
+\item
+  Mediating. Are explained by independent variables while also explain
+  dependent variables.
+\item
+  Control. Variables that are not pertinent to explaining a dependent
+  variable so must be controlled.
+\end{itemize}
+
+To understand the differences between these different variable types,
+consider the example shown in the following figure.
+
+\%Note: nice graphic on page 21/159
+
+If the researcher believes that intelligence influences students'
+academic achievement, then a measure of intelligence such as an IQ score
+would be the independent variable while a measure of academic success,
+grade point average, would be the dependent variable. If it is father
+believed that the effect of intelligence on academic achievement is also
+dependent on the students' effort then ``effort'' becomes a moderating
+variable. Incidentally, it would be reasonable to also view effort as
+the independent variable and intelligence as a moderating variable.
+
+\hypertarget{attributes-of-a-good-theory}{%
+\subsubsection{Attributes of a Good
+Theory}\label{attributes-of-a-good-theory}}
+
+Theories are simplified and often partial explanations of complex social
+reality. As such, there can be good explanations or poor explanations,
+and consequently, there can be good theories or poor theories. How can
+we evaluate the ``goodness'' of a given theory? Different criteria have
+been proposed by different researchers, the more important of which are
+listed below:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Logical consistency: Are the theoretical constructs, propositions,
+  boundary conditions, and assumptions logically consistent with each
+  other? If some of these ``building blocks'' of a theory are
+  inconsistent with each other (e.g., a theory assumes rationality, but
+  some constructs represent non-rational concepts), then the theory is a
+  poor theory.
+\item
+  Explanatory power: How much does a given theory explain (or predict)
+  reality? Good theories obviously explain the target phenomenon better
+  than rival theories, as often measured by variance explained
+  (R-square) value in regression equations.
+\item
+  Falsifiability: British philosopher Karl Popper stated in the 1940's
+  that for theories to be valid, they must be falsifiable.
+  Falsifiability ensures that the theory is potentially disprovable, if
+  empirical data does not match with theoretical propositions, which
+  allows for their empirical testing by researchers. In other words,
+  theories cannot be theories unless they can be empirically testable.
+  Tautological statements, such as ``a day with high temperatures is a
+  hot day'' are not empirically testable because a hot day is defined
+  (and measured) as a day with high temperatures, and hence, such
+  statements cannot be viewed as a theoretical proposition.
+  Falsifiability requires presence of rival explanations it ensures that
+  the constructs are adequately measurable, and so forth. However, note
+  that saying that a theory is falsifiable is not the same as saying
+  that a theory should be falsified. If a theory is indeed falsified
+  based on empirical evidence, then it was probably a poor theory to
+  begin with!
+\item
+  Parsimony: Parsimony examines how much of a phenomenon is explained
+  with how few variables. The concept is attributed to 14th century
+  English logician Father William of Ockham (and hence called ``Ockham's
+  razor'' or ``Occam's razor''), which states that among competing
+  explanations that sufficiently explain the observed evidence, the
+  simplest theory (i.e., one that uses the smallest number of variables
+  or makes the fewest assumptions) is the best. Explanation of a complex
+  social phenomenon can always be increased by adding more and more
+  constructs. However, such approach defeats the purpose of having a
+  theory, which are intended to be ``simplified'' and generalizable
+  explanations of reality. Parsimony relates to the degrees of freedom
+  in a given theory. parsimonious theories have higher degrees of
+  freedom, which allow them to be more easily generalized to other
+  contexts, settings, and populations.
+\end{enumerate}
+
+\hypertarget{approaches-to-theorizing}{%
+\subsubsection{Approaches to
+Theorizing}\label{approaches-to-theorizing}}
+
+How do researchers build theories? Steinfeld and Fulk \footnote{Steinfield,
+  Charles W., and Janet Fulk. ``The theory imperative.'' Organizations
+  and communication technology (1990): 13-25.} recommend four such
+approaches. The first approach is to build theories inductively based on
+observed patterns of events or behaviors. Such approach is often called
+``grounded theory building,'' because the theory is grounded in
+empirical observations. This technique is heavily dependent on the
+observational and interpretive abilities of the researcher, and the
+resulting theory may be subjective and non-confirmable. Furthermore,
+observing certain patterns of events will not necessarily make a theory,
+unless the researcher is able to provide consistent explanations for the
+observed patterns.
+
+The second approach to theory building is to conduct a bottom-up
+conceptual analysis to identify different sets of predictors relevant to
+the phenomenon of interest using a predefined framework. One such
+framework may be a simple input-process-output framework, where the
+researcher may look for different categories of inputs, such as
+individual, organizational, and/or technological factors potentially
+related to the phenomenon of interest (the output), and describe the
+underlying processes that link these factors to the target phenomenon.
+This is also an inductive approach that relies heavily on the inductive
+abilities of the researcher, and interpretation may be biased by
+researcher's prior knowledge of the phenomenon being studied.
+
+The third approach to theorizing is to extend or modify existing
+theories to explain a new context, such as by extending theories of
+individual learning to explain organizational learning. While making
+such an extension, certain concepts, propositions, and/or boundary
+conditions of the old theory may be retained and others modified to fit
+the new context. This deductive approach leverages the rich inventory of
+social science theories developed by prior theoreticians, and is an
+efficient way of building new theories by building on existing ones.
+
+The fourth approach is to apply existing theories in entirely new
+contexts by drawing upon the structural similarities between the two
+contexts. This approach relies on reasoning by analogy, and is probably
+the most creative way of theorizing using a deductive approach. For
+instance, Markus \footnote{Markus, M. Lynne. ``Toward a `critical mass'
+  theory of interactive media: Universal access, interdependence and
+  diffusion.'' Communication research 14.5 (1987): 491-511.} used
+analogic similarities between a nuclear explosion and uncontrolled
+growth of networks or network-based businesses to propose a critical
+mass theory of network growth. Just as a nuclear explosion requires a
+critical mass of radioactive material to sustain a nuclear explosion,
+Markus suggested that a network requires a critical mass of users to
+sustain its growth, and without such critical mass, users may leave the
+network, causing an eventual demise of the network.
+
+\hypertarget{propositions-hypothesis-and-models}{%
+\section{Propositions, Hypothesis, and
+Models}\label{propositions-hypothesis-and-models}}
+
+In seeking explanations to an observed phenomenon it is not adequate
+just to identify key constructs underlying that phenomenon, it is
+important to also state the patterns of the relationships between
+constructs. Such patterns of relationships are called propositions. A
+proposition, thus, is a conjectural relationship between constructs that
+is stated in a declarative form. An example of a proposition is: ``An
+increase in student intelligence leads to an increase in academic
+achievement.'' A proposition does not need to be true but it must be
+testable so its truth can be determined. Propositions are generally
+derived from either logic (deduction) or observation (induction).
+
+Because propositions are associations between abstract constructs, they
+cannot be tested directly. Instead, they are tested indirectly by
+examining the relationship between the corresponding measures
+(variables) of those constructs. The formulation of a proposition is
+called a hypotheses. Since IQ scores and grade point average are
+operational measures of intelligence and academic achievement
+respectively, the proposition stated above can be specified in form of a
+hypothesis: ``An increase in students' IQ score leads to an increase in
+their grade point average.'' Propositions are generated from theory
+while hypotheses are generated from empirical evidence. Hence,
+hypotheses are testable using observed data and may be rejected if the
+data do not support them.
+
+Hypotheses are said to be either strong or weak. ``Students' IQ scores
+are related to their academic achievement'' is an example of a weak
+hypothesis since it indicates neither the directionality of the
+hypothesis (i.e., whether the relationship is positive or negative) nor
+its causality (i.e., whether intelligence causes academic achievement or
+academic achievement causes intelligence). A stronger hypothesis is
+``students' IQ scores are positively related to their academic
+achievement,'' which indicates the directionality but not the causality.
+A still better hypothesis is ``students' IQ scores have positive effects
+on their academic achievement,'' which specifies both the directionality
+and the causality (i.e., intelligence causes academic achievement, and
+not the reverse).
+
+Also note that hypotheses should clearly specify independent and
+dependent variables. In the hypothesis, ``students' IQ scores have
+positive effects on their academic achievement,'' it is clear that IQ
+scores are the independent variable (the ``cause'') and academic
+achievement is the dependent variable (the ``effect''). Further, it is
+also clear that this hypothesis can be evaluated as either true (if
+higher intelligence leads to higher academic achievement) or false (if
+higher intelligence has no effect on or leads to lower academic
+achievement). Statements such as ``students are generally intelligent''
+or ``all students can achieve academic success'' are not hypotheses
+because they do not specify independent and dependent variables nor do
+they specify a directional relationship that can be evaluated as true or
+false.
+
+\hypertarget{theories-and-models}{%
+\subsection{Theories and Models}\label{theories-and-models}}
+
+A term often used in conjunction with theory is ``model.'' A model is a
+representation of all or part of a system that is constructed to study
+that system (e.g., how the system works or what triggers the system).
+While a theory tries to explain a phenomenon, a model tries to represent
+a phenomenon in an understandable way. Models are often used to make
+important decisions that are based on a given set of inputs. For
+instance, marketing managers may use models to decide how much money to
+spend on advertising for different product lines based on parameters
+such as prior year's advertising expenses, sales, market growth, and
+competing products. Likewise, weather forecasters use models to predict
+future weather patterns based on parameters such as wind speeds, wind
+direction, temperature, and humidity. While these models are useful,
+they do not explain the theory behind advertising budgets or weather
+forecasting.
+
+Models may be of different kinds, such as mathematical models, network
+models, and path models. Models can also be descriptive, predictive, or
+normative. Descriptive models are frequently used for representing
+complex systems, for visualizing variables and relationships in such
+systems. Predictive models (e.g., a regression model) allow forecast of
+future events. Normative models are used to guide activities along
+commonly accepted norms or practices. Models may also be static if it
+represents the state of a system at one point in time or dynamic if it
+represents a system's evolution over time.
+
+The process of theory or model development may involve both inductive
+and deductive reasoning, as described in Chapter 1 and shown in the
+following figure. Induction occurs when we observe a fact and ask, ``Why
+is this happening?'' while deduction occurs when we have a theory and
+ask, ``Is this supported by observable facts?'' Both induction and
+deduction leads to preliminary conclusions that are then tested in order
+to develop a final model of the phenomenon. Researchers must be able to
+move back and forth between inductive and deductive reasoning if they
+are to post extensions or modifications to a given model or theory, or
+built better ones, which are the essence of scientific research.
+
+\%Note: nice graphic on Bhat p 24/159
+
+\hypertarget{inductive-or-deductive-approaches}{%
+\section{Inductive or Deductive
+Approaches}\label{inductive-or-deductive-approaches}}
+
+Theories are used to structure research at the same time that the
+research structures theory. The reciprocal relationship between theory
+and research becomes more evident to researchers as they determine
+whether an inductive or deductive approach is best. Often, researchers
+find that a single approach is not ideal and projects iterate over many
+cycles of inductive/deductive approaches. It is common for a researcher
+to start with an inductive approach and postulate a new theory then
+switch to a deductive approach to test that theory. Later the researcher
+may return to an inductive approach to expand and refine the theory,
+followed by another round of deductive methods to test the new theory.
+
+\hypertarget{inductive-approaches}{%
+\subsection{Inductive Approaches}\label{inductive-approaches}}
+
+In an inductive approach to research, a researcher begins by collecting
+data that are relevant to the topic of interest. Once a substantial
+amount of data have been collected, the researcher will start to look
+for trends or correlations and then develop the theory that explains
+those patterns. Thus, an inductive approach moves from data to theory,
+or from specific instances to general explanations and is often referred
+to as a ``bottom-up'' approach. The following figure broadly outlines
+the process used with an inductive approach to research.
+
+Inductive methods are commonly applied to qualitative research projects
+and are frequently criticized for being too subjective. The goal is,
+generally, to attempt to understand the dynamics of business practices
+and use that understanding to draw general conclusions that may apply to
+other businesses. The result of many qualitative research projects is
+what is called \emph{Grounded Theory} \footnote{Grounded theory was
+  first discussed by Glaser and Strauss in the late 1960's but has been
+  discussed in many journal articles and books. See, for example,
+  Strauss, Anselm, and Juliet Corbin. ``Grounded theory methodology.''
+  Handbook of qualitative research 17 (1994): 273-85.} where the
+researcher starts with no preconceived notions and generates a new
+theory from the data analysis.
+
+Following are three examples of inductive methods research.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Bansal, Pratima, and Roth \footnote{Bansal, Pratima, and Kendall Roth.
+    ``Why companies go green: A model of ecological responsiveness.''
+    Academy of management journal 43.4 (2000): 717-736.} conducted a
+  study concerning why corporations ``go green.'' They collected data
+  from 53 firms in the United Kingdom and Japan and analyzed that data
+  to formulate a theory.
+\item
+  Sharma \footnote{Sharma, Sanjay. ``Managerial interpretations and
+    organizational context as predictors of corporate choice of
+    environmental strategy.'' Academy of Management journal 43.4 (2000):
+    681-697.} sent surveys to 3-5 senior managers of 110 Canadian oil
+  and gas companies with annual sales in excess of \$20M. The surveys
+  were analyzed and the researcher concludes that managers of these
+  companies must be influenced to embrace environmental issues as a
+  corporate goal, but that must be done within the context of the
+  corporate structure.
+\item
+  Sia and Gopa \footnote{Sia, Surendra Kumar, and Gopa Bhardwaj.
+    ``Employees `perception of diversity climate: Role of psychological
+    contract.'' Journal of Indian Academy of Applied Psychology 35
+    (2009): 305-312.} used an inductive method to analyze effect on
+  diversity of the ``psychological contract'' between a corporation and
+  its employees. A psychological contract is described as what the
+  employee ``\ldots{}believes he or she has agreed to\ldots{}'' rather
+  than what is actually in the employment contract. They administered
+  two different surveys to 207 managers of public sector units in
+  Orrisa, India. They found that certain minority groups tended to
+  ``\ldots{}protect each other when required, particularly during the
+  time of crisis.'' However, members of the dominant group did not
+  engage in that type of behavior, leading to ``\ldots{}a feeling of
+  non-inclusiveness.''
+\end{enumerate}
+
+In addition to the research studies discussed above, several papers have
+been recently published by various journals encouraging inductive
+research methods, especially in analyzing case studies. For example,
+Eisenhardt and Graebner \footnote{Eisenhardt, Kathleen M., and Melissa
+  E. Graebner. ``Theory building from cases: Opportunities and
+  challenges.'' Academy of management journal 50.1 (2007): 25-32.}
+published an article in the \emph{Academy of Management Journal} that
+suggested a process for generating theory from multiple case studies and
+encouraged management researchers to consider the role of
+theory-generation in their case studies.
+
+\hypertarget{deductive-approaches}{%
+\subsection{Deductive Approaches}\label{deductive-approaches}}
+
+In a deductive approach to research, a researcher begins with a theory
+of interest and then collects data to test that theory. Thus, a
+deductive approach moves from a general explanation of some phenomenon
+to specific instances that prove, or disprove, the phenomenon and is
+often referred to as a ``top-down'' approach. The following figure
+broadly outlines the process used with a deductive approach to research.
+
+Deductive methods are commonly applied to quantitative research projects
+and are often considered the ``gold standard'' of methods, especially
+among researchers in the natural sciences. The goal is, generally, to
+test existing theories to see if they are valid in cases that have not
+been previously considered. Following are a few example studies that use
+a deductive approach.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Parboteeah, Paik, and Cullen \footnote{Parboteeah, K. Praveen, Yongsun
+    Paik, and John B. Cullen. ``Religious groups and work values: A
+    focus on Buddhism, Christianity, Hinduism, and Islam.''
+    International Journal of Cross Cultural Management 9.1 (2009):
+    51-67.} studied the influence of religion on the workplace. They
+  used data from more then 44 thousand individuals in 39 countries to
+  determine if Buddhism, Christianity, Hindusim, and Islam influenced
+  both extrinsic and intrinsic work values. They found that the results
+  ``\ldots{}generally support the posited hypotheses, confirming that
+  religion is positively related to work values.'' Because the study
+  began with hypotheses and tested those hypotheses against gathered
+  data this is a deductive methodology.
+\item
+  Hackman and Oldham \footnote{Hackman, J. Richard, and Greg R. Oldham.
+    ``Motivation through the design of work: Test of a theory.''
+    Organizational behavior and human performance 16.2 (1976): 250-279.}
+  used existing theory to develop a model to predict the conditions that
+  will motivate employees to perform effectively on their jobs. They
+  tested 658 employees who worked at 62 different jobs in seven
+  organizations and found that the results support the validity of their
+  model.
+\item
+  Delaney and Huselid \footnote{Delaney, John T., and Mark A. Huselid.
+    ``The impact of human resource management practices on perceptions
+    of organizational performance.'' Academy of Management journal 39.4
+    (1996): 949-969.} investigated the relationship between human
+  resource management and perceptions of organizational performance.
+  They came up with two hypotheses and then gathered data to test those
+  hypotheses. The result of their study is that positive human resources
+  practices (like training programs) have a positive correlation with
+  the perception of the organizational performance.
+\end{enumerate}
+
+\hypertarget{complementary-approaches}{%
+\subsection{Complementary Approaches}\label{complementary-approaches}}
+
+While inductive and deductive approaches to research seem quite
+different, they are complementary in the sense that one approach creates
+theories and the other tests theories. In some cases, researchers plan
+for their research to include multiple phases, one inductive and the
+other deductive. In other cases, a researcher might begin a study with
+the plan to only conduct either inductive or deductive research but then
+discover that the other approach is needed to develop a full picture.
+
+One such example is a research project completed by Lawrence Sherman and
+Richard Berk \footnote{Sherman, Lawrence W., and Richard A. Berk. ``The
+  specific deterrent effects of arrest for domestic assault.'' American
+  sociological review (1984): 261-272.}. They conducted an experiment to
+test two competing theories of the effects of punishment on deterring
+domestic violence. Specifically, Sherman and Berk hypothesized that
+deterrence theory would provide a better explanation of the effects of
+arresting accused batterers than labeling theory. Deterrence theory
+predicts that arresting an accused spouse batterer will reduce future
+incidents of violence while labeling theory predicts that arresting
+accused spouse batterers will increase future incidents.
+
+Sherman and Berk found, after conducting an experiment with the help of
+local police in one city, that arrest did in fact deter future incidents
+of violence, thus supporting their hypothesis that deterrence theory
+would better predict the effect of arrest. After conducting this
+research, they and other researchers went on to conduct similar
+experiments in six additional cities but the results from these
+follow-up studies were mixed. In some cases, arrest deterred future
+incidents of violence but in other cases, it did not. This left the
+researchers with new data that they needed to explain. The researchers
+next took an inductive approach in an effort to make sense of their
+latest empirical observations. The new studies revealed that arrest
+seemed to have a deterrent effect for those who were married and
+employed but that it led to increased offenses for those who were
+unmarried and unemployed. In the end, the researchers turned to control
+theory and predicted that having some stake in conformity through the
+social ties provided by marriage and employment would deter future
+violence.
+
+\hypertarget{qualitative-vs.quantitative-data}{%
+\section{Qualitative vs.~Quantitative
+Data}\label{qualitative-vs.quantitative-data}}
+
+\hypertarget{summary-1}{%
+\section{Summary}\label{summary-1}}
+
+Theories, paradigms, levels of analysis, and the order in which one
+proceeds in the research process all play an important role in shaping
+what we ask about the business, how we ask it, and in some cases, even
+what we are likely to find. A microlevel study of employment practices
+will look much different than a macrolevel study. A researcher's
+theoretical perspective will also shape a study. In particular, the
+theory invoked will likely shape not only the way a question about a
+topic is asked but also which topic gets investigated in the first
+place.
+
+This does not mean that business research is biased or corrupt. One of
+the main preoccupations of researchers is to recognize and address the
+biases that creep into the research process. It is human nature to
+prefer a particular approach to a research project but understanding the
+strengths and weaknesses of that approach is crucial for not only
+successfully completing a research-based investigation but also for
+intelligently reading and understanding research reports.
+
+\hypertarget{methods}{%
+\chapter{Methods}\label{methods}}
+
+We describe our methods in this chapter.
+
+\hypertarget{applications}{%
+\chapter{Applications}\label{applications}}
+
+Some \emph{significant} applications are demonstrated in this chapter.
+
+\hypertarget{example-one}{%
+\section{Example one}\label{example-one}}
+
+\hypertarget{example-two}{%
+\section{Example two}\label{example-two}}
+
+\hypertarget{final-words}{%
+\chapter{Final Words}\label{final-words}}
+
+We have finished a nice book.
+
+\bibliography{book.bib,packages.bib}
+
+
+\end{document}
