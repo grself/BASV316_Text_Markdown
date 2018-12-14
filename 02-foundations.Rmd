@@ -1,4 +1,4 @@
-# Foundations {#foundations}
+# Foundations
 
 <!-- 
   TODO Status Text Draft: Checked against the LO Version

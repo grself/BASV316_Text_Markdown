@@ -1,4 +1,4 @@
-# Research Design {04:design}
+# Research Design
 
 <!-- 
   TODO Status Text Draft: Checked against the LO Version
