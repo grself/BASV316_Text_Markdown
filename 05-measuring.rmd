@@ -1,4 +1,4 @@
-# Measuring
+# Measuring {#ch05:measuring}
 
 <!-- 
   TODO Status Text Draft: Checked against the LO Version
@@ -99,7 +99,7 @@ Validity is concerned with the meaningfulness of research results. In brief, doe
 
 #### Measurement Validity
 
-The theoretical assessment of validity focuses on how well a construct is translated into an operational measure. This type of validity is called _translational validity_ and consists of two subtypes: face and content validity. Translational validity is typically assessed using a panel of expert judges who rate each item (indicator) on how well it fits the conceptual definition of that construct along with a qualitative technique called _Q-method_\footnote^[For an explanation of Q-method, see (@shinebourne2009using).].
+The theoretical assessment of validity focuses on how well a construct is translated into an operational measure. This type of validity is called _translational validity_ and consists of two subtypes: face and content validity. Translational validity is typically assessed using a panel of expert judges who rate each item (indicator) on how well it fits the conceptual definition of that construct along with a qualitative technique called _Q-method_^[For an explanation of Q-method, see (@shinebourne2009using).].
 
 The empirical assessment of validity examines how well a given measure relates to one or more external criterion, based on empirical observations. This type of validity is called _criterion-related validity_, which includes four sub-types: convergent, discriminant, concurrent, and predictive validity. While translation validity examines whether a measure is a good reflection of its underlying construct, criterion-related validity examines whether a given measure behaves the way it should, given the theory of that construct. Criterion-referenced assessment is based on quantitative analysis of observed data using statistical techniques such as correlational analysis, factor analysis, and so forth. The distinction between theoretical and empirical assessment of validity is illustrated in Figure xxx. However, both approaches are needed to adequately ensure the validity of measures in business research.
 
