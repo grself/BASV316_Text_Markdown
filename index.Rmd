@@ -7,19 +7,14 @@ output: bookdown::gitbook
 documentclass: book
 bibliography: [book.bib, packages.bib]
 biblio-style: apalike
-link-citations: true
+link-citations: yes
 github-repo: grself/BASV316_Text
-cover-image: ""
-favicon: ""
 description: "This is the text for the University of Arizona South BASV 316, Introductory Methods of Analysis."
 ---
 
 <!--
-
 TODO:
-
-181023: None at this time
-
+  181023: None at this time
 -->
 
 # Preface {-}
@@ -37,3 +32,13 @@ I have taught BASV 316, _Introductory Methods of Analysis_, online for the Unive
 This lab manual is written with *Bookdown* tools in *RStudio*. It is published under a *Creative Commons 0 Universal* license, essentially "public domain," (see [Creative Commons License]) with a goal that other instructors can modify and use it to meet their own needs. The source can be found at [GITHUB](https://github/grself/BASV316_Text) and I always welcome comments. Finally, it was written with Base R (@corer2018).
 
 --George Self
+
+
+
+
+```{r include=FALSE}
+# automatically create a bib database for R packages
+knitr::write_bib(c(
+  .packages(), 'bookdown', 'knitr', 'rmarkdown'
+), 'packages.bib')
+```
