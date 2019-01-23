@@ -1,89 +1,72 @@
-%*****************************************
-\chapter{Introduction}\label{ch01:introduction}
-%*****************************************
+# Introduction {ch01:introduction}
+
+<!--
 %TODO Status Text Draft. Glossary/Bibliography updated
+-->
 
-\begin{center}
-	\rowcolors{1}{gray!30}{gray!10}
-	\begin{tabularx}{.90\linewidth}{X}
-		\hline 
-		\textbf{ Objectives } \\ 
-		\hline
-		1. Identify the various sources of knowledge\\ 
-		2. Define "science"\\ 
-		3. Describe the scientific method and relate that to business research\\ 
-		4. Identify the three types of science research (exploratory, descriptive, and explanatory)\\ 
-		\hline
-	\end{tabularx}
-\end{center}
-\medskip
+## Objectives
 
-\section{Knowing}
-\begin{wrapfigure}{r}{0.4\textwidth}
-	\label{05:fig01} 
-	\centering
-	\includegraphics[width=0.4\textwidth]{gfx/01-shopping} 
-\end{wrapfigure}
+1. Identify the various sources of knowledge
+2. Define "science"
+3. Describe the scientific method and relate that to business research
+4. Identify the three types of science research (exploratory, descriptive, and explanatory)
+
+## Knowing
+![]{gfx/01-shopping} 
+
 In general, people want to know about things. Most people are curious about the world around them but business owners are interested in specifically how people can be persuaded to make a purchase. Understanding how one person can walk past a candy store without even the slightest thought about going inside while another cannot seem to walk within a block without stopping in for a treat is valuable information for the owner of that store. In general, business owners are eager to know about people and what drives their behavior.\blfootnote{Photo by frankie cordoba on Unsplash}
 
 The goal of this book is to teach students how research can be used to help business owners make good decisions. More specifically, the book examines the ways that researchers come to understand the impetus that drives purchases. The research methods considered in this book are a systematic process of inquiry designed to learn something of value about a business problem. Before considering research methods, though, it is useful to contemplate other sources of knowledge.
 
-\subsection{Different Sources of Knowledge}\label{ch01.01}
+## Different Sources of Knowledge
 
 As an introduction to the field of research, it is useful to briefly consider common sources of knowledge. 
 
-\begin{itemize}
-	\item \textbf{Assumptions}. Many people assume that children without siblings are rather spoiled and unpleasant. In fact, many people believe that the social skills of only children will not be as well developed as those of people who were reared with siblings. However, sociological research shows that children who grow up without siblings are no worse off than those with siblings when it comes to developing good social skills \cite{bobbitt2013number}. Researchers consider precisely these types of assumptions that ``everyone knows'' when investigating their worlds. Sometimes the assumptions are correct and other times not so much.
+* **Assumptions.** Many people assume that children without siblings are rather spoiled and unpleasant. In fact, many people believe that the social skills of only children will not be as well developed as those of people who were reared with siblings. However, sociological research shows that children who grow up without siblings are no worse off than those with siblings when it comes to developing good social skills \cite{bobbitt2013number}. Researchers consider precisely these types of assumptions that "everyone knows" when investigating their worlds. Sometimes the assumptions are correct and other times not so much.
 	
-	\item \textbf{Direct Experience}. One source of knowledge is direct experience. Mark Twain observed that ``... the cat that sits down on a hot stove-lid ... will never sit down on a hot stove-lid again...'' \cite{twain2014following} Direct experience may be a source of accurate information, but only for those who experience it. The problem is that the observation is not deliberate or formal; rather, it comes as an accidental by-product of life. Even worse, the lesson learned may be wrong. Without a systematic process for observing and evaluating those observations any conclusions drawn are suspect.
+* **Direct Experience.** One source of knowledge is direct experience. Mark Twain observed that "... the cat that sits down on a hot stove-lid ... will never sit down on a hot stove-lid again..." \cite{twain2014following} Direct experience may be a source of accurate information, but only for those who experience it. The problem is that the observation is not deliberate or formal; rather, it comes as an accidental by-product of life. Even worse, the lesson learned may be wrong. Without a systematic process for observing and evaluating those observations any conclusions drawn are suspect.
 
-	\item \textbf{Tradition}. Another source of knowledge is tradition. There is an urban legend about a woman who for years used to cut both ends off of a ham before putting it in the oven\cite{snopes2005grandma}. She baked ham that way because that was the way her mother did it, so clearly that was the way it was supposed to be done. Her mother was the authority, after all. After years of tossing cuts of perfectly good ham into the trash, however, she learned that the only reason her mother ever cut the ends off ham before cooking it was that her baking pan was not large enough to accommodate the ham without trimming it. Tradition may not be the best source of knowledge.
+* **Tradition.** Another source of knowledge is tradition. There is an urban legend about a woman who for years used to cut both ends off of a ham before putting it in the oven\cite{snopes2005grandma}. She baked ham that way because that was the way her mother did it, so clearly that was the way it was supposed to be done. Her mother was the authority, after all. After years of tossing cuts of perfectly good ham into the trash, however, she learned that the only reason her mother ever cut the ends off ham before cooking it was that her baking pan was not large enough to accommodate the ham without trimming it. Tradition may not be the best source of knowledge.
 		
-	\item \textbf{Authority}. Many people rely on the government, teachers, and other authority figures to dispense knowledge. Unfortunately, authority figures may or may not be a source of accurate knowledge.
+* **Authority.** Many people rely on the government, teachers, and other authority figures to dispense knowledge. Unfortunately, authority figures may or may not be a source of accurate knowledge.
 	
-	\item \textbf{Observation}. People rely on their own informal observations of their worlds. Occasionally, someone will decide to ``investigate'' something, perhaps an odd sound, and their observations will become more selective. Unfortunately, these types of observations are not systematic and may easily lead to incorrect conclusions.
+* **Observation.** People rely on their own informal observations of their worlds. Occasionally, someone will decide to "investigate" something, perhaps an odd sound, and their observations will become more selective. Unfortunately, these types of observations are not systematic and may easily lead to incorrect conclusions.
 	
-	\item \textbf{Generalization}. Often a broad pattern is observed and people draw a conclusion that the pattern is true for all instances. This can be the source of prejudice where the actions of a few bad actors may bias peoples' knowledge of the whole.
-	
-\end{itemize} 
+* **Generalization.** Often a broad pattern is observed and people draw a conclusion that the pattern is true for all instances. This can be the source of prejudice where the actions of a few bad actors may bias peoples' knowledge of the whole.
 
 While there are many ways that people come to know what they know, some of those ways are more reliable than others. The goal of formal research is to ferret out an accurate answer to the questions people have \textemdash \; to provide a reliable source of knowledge. 
 
-\subsection{What is science?}
+### What is science?
 
 Most research methods used for business and marketing are based on methods used in the various social sciences and this section of the book describes how that scientific research is conducted.
 
-Many students assume that ``science'' is a craft practiced by highly educated experts wearing white lab coats and pouring boiling liquids into test tubes. Unfortunately, that is not an accurate definition of ``science.'' Etymologically, the word ``science'' is derived from the Latin word \textit{scientia}, which means knowledge. ``Science,'' then, is a systematic and organized body of knowledge acquired by using a specific, rigorous method in any field of inquiry. The sciences can be grouped into two broad categories: natural and social. Natural science is the science of naturally occurring objects or phenomena, such as light, objects, matter, earth, celestial bodies, or the human body. Natural sciences are further classified into the physical sciences, earth sciences, life sciences, and others. In contrast, social science is the science of people or collections of people, such as groups, firms, societies, or economies, and their individual or collective behaviors. Social sciences can be classified into disciplines such as psychology (the science of human behaviors), sociology (the science of social groups), and economics (the science of markets and economies).
+Many students assume that "science" is a craft practiced by highly educated experts wearing white lab coats and pouring boiling liquids into test tubes. Unfortunately, that is not an accurate definition of "science.'' Etymologically, the word "science" is derived from the Latin word \textit{scientia}, which means knowledge. "Science,'' then, is a systematic and organized body of knowledge acquired by using a specific, rigorous method in any field of inquiry. The sciences can be grouped into two broad categories: natural and social. Natural science is the science of naturally occurring objects or phenomena, such as light, objects, matter, earth, celestial bodies, or the human body. Natural sciences are further classified into the physical sciences, earth sciences, life sciences, and others. In contrast, social science is the science of people or collections of people, such as groups, firms, societies, or economies, and their individual or collective behaviors. Social sciences can be classified into disciplines such as psychology (the science of human behaviors), sociology (the science of social groups), and economics (the science of markets and economies).
 
 Sciences are also classified by their purpose. Basic sciences, also called pure sciences, are those that explain the most basic objects and forces, relationships between them, and laws governing them. Examples include physics, mathematics, and biology. Applied sciences, also called practical sciences, are sciences that apply scientific knowledge from basic sciences to a physical environment. For instance, engineering is an applied science that applies the laws of physics and chemistry to practical applications such as building stronger bridges or fuel efficient combustion engines, while medicine is an applied science that applies the laws of biology to relieving human ailments.
 
 Scientific knowledge is a generalized body of laws and theories acquired using the scientific method to explain a phenomenon or behavior of interest. Closely related to laws and theories are hypotheses.
 
-\begin{itemize}
-	\item Laws are observed patterns of phenomena or behaviors and are based on repeated experimental observations. They are generalized rules that explain observations and are, typically, theories that have been repeatedly tested and believed to be true. As an example, the Newtonian Laws of Motion describe what happens when an object is in a state of rest or motion (Newton's First Law), what force is needed to move a stationary object or stop a moving object (Newton's Second Law), and what happens when two objects collide (Newton's Third Law). Collectively, the three laws constitute the basis of classical mechanics \textemdash \; a theory of moving objects. 
+* Laws are observed patterns of phenomena or behaviors and are based on repeated experimental observations. They are generalized rules that explain observations and are, typically, theories that have been repeatedly tested and believed to be true. As an example, the Newtonian Laws of Motion describe what happens when an object is in a state of rest or motion (Newton's First Law), what force is needed to move a stationary object or stop a moving object (Newton's Second Law), and what happens when two objects collide (Newton's Third Law). Collectively, the three laws constitute the basis of classical mechanics \textemdash \; a theory of moving objects. 
 
-	\item Theories are systematic explanations of underlying phenomenon or behavior. Theories are typically based on hypotheses that have been tested and found to be true, but the testing has been incomplete or not rigorous enough to classify the theory as a law. It is important to note that theories are not ``guesses'' but are, instead, the result of experimental observations that found to be true in the instances tested. It is also important to note that theories can be falsifiable, that is, there are ways to prove that the theory is not true. As examples, the theory of optics explains the properties of light and how it behaves in different media, electromagnetic theory explains the properties of electricity and how to generate it, quantum mechanics explains the properties of subatomic particles, and thermodynamics explains the properties of energy and mechanical work. 
+* Theories are systematic explanations of underlying phenomenon or behavior. Theories are typically based on hypotheses that have been tested and found to be true, but the testing has been incomplete or not rigorous enough to classify the theory as a law. It is important to note that theories are not "guesses" but are, instead, the result of experimental observations that found to be true in the instances tested. It is also important to note that theories can be falsifiable, that is, there are ways to prove that the theory is not true. As examples, the theory of optics explains the properties of light and how it behaves in different media, electromagnetic theory explains the properties of electricity and how to generate it, quantum mechanics explains the properties of subatomic particles, and thermodynamics explains the properties of energy and mechanical work. 
 
-	\item Hypotheses are a well-guessed explanation of some phenomena or a prediction about what will happen in the future. Hypotheses are generally the beginning of an investigation that will either support or reject the hypotheses. As an example, a researcher may hypothesize that products in red boxes sell better than products in blue boxes. To test the hypothesis an experiment can be set up where the same product is sold in two identical boxes, except that one box is red and the other blue.
-\end{itemize}
+* Hypotheses are a well-guessed explanation of some phenomena or a prediction about what will happen in the future. Hypotheses are generally the beginning of an investigation that will either support or reject the hypotheses. As an example, a researcher may hypothesize that products in red boxes sell better than products in blue boxes. To test the hypothesis an experiment can be set up where the same product is sold in two identical boxes, except that one box is red and the other blue.
 
 The pure science of economics and its applied science of business includes a body of both laws and theories. For example:
 
-\begin{itemize}
-	\item Law of Supply and Demand. While this is often described as a ``model'' it is also usually categorized as a law since it has been shown to be true in repeated observations. This law basically states that there is a relationship between a product's demand and its supply.
+* Law of Supply and Demand. While this is often described as a "model" it is also usually categorized as a law since it has been shown to be true in repeated observations. This law basically states that there is a relationship between a product's demand and its supply.
 
-	\item Law of Diminishing Returns. This law states that at some point increasing a single production factor will yield less profit-per-unit produced. In other words, the return on the investment is not worth the cost.
+* Law of Diminishing Returns. This law states that at some point increasing a single production factor will yield less profit-per-unit produced. In other words, the return on the investment is not worth the cost.
 
-	\item The 2009 Nobel Prize for economics was for the theory that groups work together to manage common resources, like water, by using collective property rights.
+* The 2009 Nobel Prize for economics was for the theory that groups work together to manage common resources, like water, by using collective property rights.
 
-	\item The theory of marginalism attempts to explain the discrepancy in the value of goods by looking at their secondary, or marginal, utility. The price of diamonds is greater than water because of a marginal ``satisfaction'' of owning diamonds when compared to water, even though water is far more utilitarian.  
-\end{itemize}
+* The theory of marginalism attempts to explain the discrepancy in the value of goods by looking at their secondary, or marginal, utility. The price of diamonds is greater than water because of a marginal "satisfaction" of owning diamonds when compared to water, even though water is far more utilitarian.  
 
 The goal of scientific research is to discover laws and postulate theories that can explain natural or social phenomena, or in other words, build scientific knowledge. It is important to understand that this knowledge may be imperfect or even quite far from the truth. It is important to understand that theories, upon which scientific knowledge is based, are explanations of a particular phenomenon and some tend to fit the observations better than others. The progress of science is marked by progression over time from poorer theories to better theories through enhanced observations using more accurate instruments and more informed logical reasoning.
 
 Scientific laws or theories are derived through a process of logic and evidence. Logic (theory) and evidence (observations) are the two, and only two, pillars upon which scientific knowledge is based. In science, theories and observations are interrelated and one cannot exist without the other. Theories provide meaning and significance to what we observe and observations help validate or refine existing theory or construct new theory. Any other means of knowledge acquisition, such as faith or authority, cannot be considered science.
 
-\subsection{Scientific Research}
+### Scientific Research
 
 Scientific research moves between theory and observations, each reinforcing the other. Theory drives the research of some phenomenon but observations made by the research further refine the underlying theory. Relying solely on observations for making inferences while ignoring theory is not scientific research, it is simple observation. The application of theories and observations lead to two primary types of scientific research: theoretical and empirical. Theoretical research is concerned with developing abstract concepts about natural or social phenomena while empirical research is concerned with testing theoretical concepts to see how well they reflect reality in our observations. 
 
@@ -130,19 +113,19 @@ Conducting scientific research, therefore, requires two sets of skills, theoreti
 
 \subsection{Scientific Method}
 
-If science is knowledge acquired through a scientific method then what is the ``scientific method?'' Scientific method refers to a standardized set of techniques for building scientific knowledge, such as how to make valid observations, how to interpret results, and how to generalize those results. The scientific method allows researchers to independently and impartially test preexisting theories and prior findings, and subject them to open debate, modifications, or enhancements. The scientific method must satisfy four characteristics:
+If science is knowledge acquired through a scientific method then what is the "scientific method?'' Scientific method refers to a standardized set of techniques for building scientific knowledge, such as how to make valid observations, how to interpret results, and how to generalize those results. The scientific method allows researchers to independently and impartially test preexisting theories and prior findings, and subject them to open debate, modifications, or enhancements. The scientific method must satisfy four characteristics:
 
 \begin{description}
 	\item[\Gls{replicability}] Others should be able to independently replicate or repeat a scientific study and obtain similar, if not identical, results.
 
 	\item[\Gls{precision}] Theoretical concepts, which are often hard to measure, must be defined with such precision that others can use those definitions to measure those concepts and test that theory.
 
-	\item[\Gls{falsifiability}] A theory must be stated in a way that it can be disproven. Theories that cannot be tested or falsified are not scientific theories and any such knowledge is not scientific knowledge. A theory that is specified in imprecise terms or whose concepts are not accurately measurable cannot be tested, and is therefore not scientific. Sigmund Freud's ideas on psychoanalysis fall into this category and is therefore not considered a ``theory'' even though psychoanalysis may have practical utility in treating certain types of ailments.
+	\item[\Gls{falsifiability}] A theory must be stated in a way that it can be disproven. Theories that cannot be tested or falsified are not scientific theories and any such knowledge is not scientific knowledge. A theory that is specified in imprecise terms or whose concepts are not accurately measurable cannot be tested, and is therefore not scientific. Sigmund Freud's ideas on psychoanalysis fall into this category and is therefore not considered a "theory" even though psychoanalysis may have practical utility in treating certain types of ailments.
 
-	\item[\Gls{parsimony}] When there are multiple explanations of a phenomenon, scientists must always accept the simplest or logically most economical explanation. This concept is called parsimony or ``Occam's razor.'' Parsimony prevents scientists from pursuing overly complex or outlandish theories with endless number of concepts and relationships that may explain a little bit of everything but nothing in particular.
+	\item[\Gls{parsimony}] When there are multiple explanations of a phenomenon, scientists must always accept the simplest or logically most economical explanation. This concept is called parsimony or "Occam's razor.'' Parsimony prevents scientists from pursuing overly complex or outlandish theories with endless number of concepts and relationships that may explain a little bit of everything but nothing in particular.
 \end{description}
 
-Any branch of inquiry that does not allow the scientific method to test its basic laws or theories cannot be called ``science.'' For instance, art is not science because artistic ideas (such as the value of perspective) cannot be tested by independent observers using a replicable, precise, falsifiable, and parsimonious method. Similarly, music, literature, humanities, and law are also not considered science, even though they are creative and worthwhile endeavors.
+Any branch of inquiry that does not allow the scientific method to test its basic laws or theories cannot be called "science.'' For instance, art is not science because artistic ideas (such as the value of perspective) cannot be tested by independent observers using a replicable, precise, falsifiable, and parsimonious method. Similarly, music, literature, humanities, and law are also not considered science, even though they are creative and worthwhile endeavors.
 
 The scientific method, as applied to business and marketing, includes a variety of research approaches, tools, and techniques, such as qualitative and quantitative data, statistical analysis, experiments, field surveys, case research, and so forth. Most of this book is devoted to learning about these different methods. However, recognize that the scientific method operates primarily at the empirical level of research, i.e., how to make observations and analyze and interpret these observations. Very little of this method is directly pertinent to the theoretical level, which is really the more challenging part of scientific research.
 
@@ -158,7 +141,7 @@ Exploratory research is often conducted in new areas of inquiry, where the goals
 
 \begin{enumerate}
 	\item to scope out the magnitude or extent of a particular phenomenon, problem, or behavior
-	\item to generate some initial ideas (or ``hunches'') about that phenomenon
+	\item to generate some initial ideas (or "hunches'') about that phenomenon
 	\item to test the feasibility of undertaking a more extensive study regarding that phenomenon. 
 \end{enumerate}
 
@@ -170,7 +153,7 @@ Descriptive research is directed at making careful observations and detailed doc
 
 \subsubsection{Explanatory}
 
-Explanatory research seeks explanations of observed phenomena, problems, or behaviors. While descriptive research examines what, where, and when of a phenomenon, explanatory research seeks answers to why and how. It attempts to ``connect the dots'' in research, by identifying causal factors and outcomes of the target phenomenon. Examples include understanding the reasons behind gang violence with the goal of prescribing strategies to overcome such societal ailments. Most academic or doctoral research belongs to the explanation category, though some amount of exploratory and/or descriptive research may also be needed during initial phases of a research project. Seeking explanations for observed events requires strong theoretical and interpretation skills, along with intuition, insights, and personal experience.
+Explanatory research seeks explanations of observed phenomena, problems, or behaviors. While descriptive research examines what, where, and when of a phenomenon, explanatory research seeks answers to why and how. It attempts to "connect the dots" in research, by identifying causal factors and outcomes of the target phenomenon. Examples include understanding the reasons behind gang violence with the goal of prescribing strategies to overcome such societal ailments. Most academic or doctoral research belongs to the explanation category, though some amount of exploratory and/or descriptive research may also be needed during initial phases of a research project. Seeking explanations for observed events requires strong theoretical and interpretation skills, along with intuition, insights, and personal experience.
 
 \subsection{Specific Considerations for Business/Marketing Research}
 
